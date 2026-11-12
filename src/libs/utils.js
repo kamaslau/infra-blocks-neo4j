@@ -1,4 +1,4 @@
-const byte2kb = (byte) => Math.ceil(byte / 1024);
+const byte2kb = (byte = 0) => Math.ceil(byte / 1024);
 
 export const briefLog = async (ctx, next) => {
   const start = Date.now();

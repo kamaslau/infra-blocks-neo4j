@@ -17,10 +17,11 @@
   "main": "src/index.js",
   "scripts": {
     "test": "node --test",
-    "start:dev": "NODE_ENV=development node --watch .",
-    "start": "NODE_ENV=production node ."
+    "start:dev": "NODE_ENV=development node --env-file-if-exists=.env --watch .",
+    "start": "NODE_ENV=production node --env-file-if-exists=.env ."
   },
   "dependencies": {
+    "http-response-text": "^0.10.0",
     "koa": "^3.0.0",
     "neo4j-driver": "^5.28.1"
   },
