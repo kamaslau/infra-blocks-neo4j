@@ -1,5 +1,8 @@
 # infra-blocks-neo4j
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+![Repository size](https://img.shields.io/github/repo-size/kamaslau/infra-blocks-neo4j?color=56BEB8)
+
 A [Neo4j](https://neo4j.com/docs/) bootstraper, using [official Node.js client driver](https://neo4j.com/docs/javascript-manual/current/) and [Neo4j Browser](https://neo4j.com/docs/browser-manual/current/) as Web UI。
 
 For desktop GUI, consider [Neo4j Desktop](https://neo4j.com/docs/desktop-manual/current/).
