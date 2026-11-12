@@ -69,7 +69,7 @@ Failures answer with a status and log a line, both carrying the text from [http-
 | Anything else the server refused | `500` | `Read/Write (500 Internal Server Error) …` |
 | `APP_PORT` already in use | — | `Listen (409 Conflict) listen EADDRINUSE …`, exits `1` |
 
-`DB_URL`, `DB_NAME` and `DB_USER` default to the values in `.env.example`; the password is read from `PASSWORD`, the same variable the compose file passes to `NEO4J_AUTH`. The driver only opens a socket when the first request arrives, so a stopped database shows up as a `503` on that request rather than a crash at startup. Connection attempts give up after five seconds. Message language follows `LANG` / `LC_ALL` — `en`, `zh`, `ja`, anything else falls back to English.
+`DB_URL`, `DB_NAME` and `DB_USER` default to the values in `.env.example`; the password is read from `PASSWORD`, the same variable the compose file passes to `NEO4J_AUTH`. The driver only opens a socket when the first request arrives, so a stopped database shows up as a `503` on that request rather than a crash at startup. Connection attempts give up after five seconds. Message language follows `LANG` / `LC_ALL`, matched against `listLanguages()` from the installed http-response-text (`en`, `zh`, `ja`, `fr` today); anything else falls back to English.
 
 ## Relevent Docker images
 
