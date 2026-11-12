@@ -21,7 +21,7 @@
     "start": "NODE_ENV=production node --env-file-if-exists=.env ."
   },
   "dependencies": {
-    "http-response-text": "^0.10.0",
+    "http-response-text": "^0.11.0",
     "koa": "^3.0.0",
     "neo4j-driver": "^5.28.1"
   },
