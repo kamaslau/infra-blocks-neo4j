@@ -23,7 +23,7 @@ Default logins should only be used in local/dev environments.
 
 ```bash
 # Initiate .env file
-cp .env.sample .env
+cp .env.example .env
 # Start services
 docker compose up -d
 ```
