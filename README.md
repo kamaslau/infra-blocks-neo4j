@@ -1,4 +1,4 @@
-# trial-neo4j
+# infra-blocks-neo4j
 
 A [Neo4j](https://neo4j.com/docs/) bootstraper, using [official Node.js client driver](https://neo4j.com/docs/javascript-manual/current/) and [Neo4j Browser](https://neo4j.com/docs/browser-manual/current/) as Web UI。
 
