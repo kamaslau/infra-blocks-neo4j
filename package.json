@@ -1,9 +1,12 @@
 {
-  "name": "trial-neo4j",
+  "name": "infra-blocks-neo4j",
   "version": "0.1.1",
+  "engines": {
+    "node": "^26 || >=24"
+  },
   "author": "Lau, Kamas <kamaslau@dingtalk.com> (https://www.kamaslau.com/)",
   "license": "MIT",
-  "description": "Trial or micro-service unit of Neo4j, with official Node.js driver.",
+  "description": "Neo4j with the official Node.js driver, for questions a join table cannot express.",
   "keywords": [
     "neo4j",
     "graphql",
@@ -23,10 +26,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kamaslau/trial-neo4j.git"
+    "url": "git+https://github.com/kamaslau/infra-blocks-neo4j.git"
   },
   "bugs": {
-    "url": "https://github.com/kamaslau/trial-neo4j/issues"
+    "url": "https://github.com/kamaslau/infra-blocks-neo4j/issues"
   },
-  "homepage": "https://github.com/kamaslau/trial-neo4j#readme"
+  "homepage": "https://github.com/kamaslau/infra-blocks"
 }
