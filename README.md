@@ -46,6 +46,31 @@ docker compose up -d
 docker exec -it <neo4j-container-name>
 ```
 
+## Demo client
+
+`pnpm start` runs a Koa service on `APP_PORT` (3000). Each `GET /` merges one `Person` node and reads the collection back through the official driver:
+
+```bash
+cp .env.example .env
+pnpm install
+pnpm start
+curl -s http://127.0.0.1:3000/
+# {"count":1,"data":[{"identity":…,"properties":{"name":"Kamas"},…}]}
+```
+
+Failures answer with a status and log a line, both carrying the text from [http-response-text](https://github.com/kamaslau/http-response-text):
+
+| What happened | Response | Log line |
+|---|---|---|
+| Driver cannot reach the server | `503` | `Read/Write (503 Service Unavailable) Could not perform discovery …` |
+| Wrong password | `401` | `Read/Write (401 Unauthorized) …` |
+| Constraint rejected the write | `409` | `Read/Write (409 Conflict) …` |
+| Malformed Cypher | `400` | `Read/Write (400 Bad Request) …` |
+| Anything else the server refused | `500` | `Read/Write (500 Internal Server Error) …` |
+| `APP_PORT` already in use | — | `Listen (409 Conflict) listen EADDRINUSE …`, exits `1` |
+
+`DB_URL`, `DB_NAME` and `DB_USER` default to the values in `.env.example`; the password is read from `PASSWORD`, the same variable the compose file passes to `NEO4J_AUTH`. The driver only opens a socket when the first request arrives, so a stopped database shows up as a `503` on that request rather than a crash at startup. Connection attempts give up after five seconds. Message language follows `LANG` / `LC_ALL` — `en`, `zh`, `ja`, anything else falls back to English.
+
 ## Relevent Docker images
 
 - [Neo4j](https://hub.docker.com/_/neo4j)
