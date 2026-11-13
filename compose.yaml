@@ -9,7 +9,7 @@ services:
   neo4j:
     container_name: neo4j
     image: neo4j:latest
-    restart: always
+    restart: unless-stopped
     networks:
       - backend
     env_file: .env
